@@ -3,9 +3,7 @@ ML 연동 웹 서비스 데모 (KR)
 
 # Installation
 
-### Python 환경 구축 (Anaconda 설치)
-
-#### Linux에서 Anaconda 설치
+### 1-1. Linux에서 Anaconda 설치
 
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
@@ -13,14 +11,26 @@ chmod 774 Anaconda3-2022.05-Linux-x86_64.sh
 ./Anaconda3-2022.05-Linux-x86_64.sh  # 모두 yes
 ```
 
-#### 기타 환경에서 Anaconda 설치
+### 1-2. 기타 환경에서 Anaconda 설치
 
 [Anaconda 공식 다운로드 페이지](https://www.anaconda.com/products/distribution#Downloads) 참고.
 
-#### Anaconda 설치 후
+### 2. Anaconda 설치 확인
 
 - 설치 후에는 터미널 혹은 ssh 연결을 껐다켜야 할수도 있습니다. 터미널 프롬프트 앞에 `(base)`가 뜨거나 `conda` 명령어가 동작하면 Anaconda가 정상적으로 설치된 것입니다.
 - 여러 프로젝트를 개발하면서 패키지 버전 충돌을 예방하고자 하면 conda env 가상 환경 참고.
+
+### 3. PyTorch 설치
+
+```bash
+ conda install pytorch torchvision -c pytorch
+```
+
+### 4. 기타 Python 패키지 설치
+
+```bash
+pip install -r requirements.txt  # 사용되는 패키지는 해당 txt 파일 참고! 
+```
 
 # Getting Started
 

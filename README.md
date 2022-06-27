@@ -37,7 +37,8 @@ pip install -r requirements.txt  # 사용되는 패키지는 해당 txt 파일 �
 아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.
 
 ```bash
-python manage.py runserver --ip 0.0.0.0 --port 8000
+python manage.py migrate
+python manage.py runserver 0.0.0.0:8000
 ```
 
 명령어를 실행한 개발용 머신에서 접속하는 경우 주소창에 `localhost:8000`, 다른 서버 머신에서 명령어를 실행한 경우, `<서버 ip 주소 혹은 도메인>:8000`로 접속 가능합니다.

@@ -44,3 +44,44 @@ python manage.py runserver 0.0.0.0:8000
 명령어를 실행한 개발용 머신에서 접속하는 경우 주소창에 `localhost:8000`, 다른 서버 머신에서 명령어를 실행한 경우, `<서버 ip 주소 혹은 도메인>:8000`로 접속 가능합니다.
 
 본 명령어는 개발 및 테스트용으로, production (상용) 환경에서 배포할 때에는 웹 서버 전용 소프트웨어 프로그램 (e.g., Apache, WSGI) 혹은 클라우드 서비스를 사용합니다.
+ 
+ ----
+# Docker
+위의 파일을 Docker 상에서 실행할 수 있도록 하는 과정입니다.
+
+_Linux 환경에서 실행하였으며, docker를 실행할 때 sudo를 사용하지 않도록 설정하였음._
+
+해당 repository의 코드를 도커 상에서 사용하기 위해서 두 가지의 단계를 걸칩니다.
+
+### 1. Dockerfile 작성
+
+Docker 상에서 Django 서버를 가동하기 위해 필요한 절차들을 Dockerfile 작성하게 됩니다. 
+
+### 2. Docker Build
+
+"demo"라는 이름으로 Docker Image를 만들어줍니다. 
+
+```bash
+docker build . -t demo
+```
+
+현재 존재하는 docker image를 확인할 합니다.
+
+```bash
+docker images
+```
+
+### 3. Docker Container 실행
+
+빌드한 이미지를 통해 Docker container를 생성합니다. 
+Dockerfile에서 Docker container가 실행됨과 동시에 Django 데모 서버가 시작되도록 설정해두었습니다. 
+
+```bash
+docker run -it --name django_demo -p 8000:8000 domo0:0
+```
+
+컨테이너의 이름은 django_demo로 하였으며 아래 커맨드로 현재 존재하는 컨테이너들을 확인할 수 있습니다. 
+
+```bash
+docker ps -a
+```

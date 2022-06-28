@@ -51,7 +51,7 @@ python manage.py runserver 0.0.0.0:8000
 
 _Linux 환경에서 실행하였으며, docker를 실행할 때 sudo를 사용하지 않도록 설정하였음._
 
-해당 repository의 코드를 도커 상에서 사용하기 위해서 두 가지의 단계를 걸칩니다.
+해당 repository의 코드를 도커 상에서 사용하기 위해서 세 가지의 단계를 걸칩니다.
 
 ### 1. Dockerfile 작성
 

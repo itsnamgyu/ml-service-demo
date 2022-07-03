@@ -34,7 +34,8 @@ pip install -r requirements.txt  # 사용되는 패키지는 해당 txt 파일 �
 
 # Getting Started
 
-아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.
+1. 먼저 학습된 ML 모델 파일 (`model.pt`)를 최상단 폴더에 복사해주세요.
+2. 아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.
 
 ```bash
 python manage.py migrate

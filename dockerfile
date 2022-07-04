@@ -15,6 +15,6 @@ RUN git clone "https://github.com/itsnamgyu/ml-service-demo"
 WORKDIR ./ml-service-demo
 RUN pip3 install --no-cache-dir  -r requirements.txt
 
-CMD ["python3", "manage.py", "migrate"]
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+
+CMD ["bash", "-c", "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"]
 

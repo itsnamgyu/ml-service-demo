@@ -3,6 +3,7 @@
 django~=3.0
 django-bootstrap-v5
 torch
+torchvision
 
 jupyter
 matplotlib

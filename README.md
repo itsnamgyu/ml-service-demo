@@ -34,7 +34,8 @@ pip install -r requirements.txt  # 사용되는 패키지는 해당 txt 파일 �
 
 # Getting Started
 
-아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.
+1. 먼저 학습된 ML 모델 파일 (`model.pt`)를 최상단 폴더에 복사해주세요.
+2. 아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.
 
 ```bash
 python manage.py migrate
@@ -77,7 +78,7 @@ docker images
 Dockerfile에서 Docker container가 실행됨과 동시에 Django 데모 서버가 시작되도록 설정해두었습니다. 
 
 ```bash
-docker run -it --name django_demo -p 8000:8000 domo0:0
+docker run -it --name django_demo -p 8000:8000 demo0:0
 ```
 
 컨테이너의 이름은 django_demo로 하였으며 아래 커맨드로 현재 존재하는 컨테이너들을 확인할 수 있습니다. 

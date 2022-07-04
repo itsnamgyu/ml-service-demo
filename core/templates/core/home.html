@@ -1,3 +1,27 @@
-Hello World!
-
-Hi Ryan. Hello!
+{% extends 'core/base.html' %}
+{% block body %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8">
+        <div class="row">
+          <h2 class="mb-4">Post List</h2>
+          {% for post in posts %}
+            <div class="col-6 mb-4">
+              <div class="post">
+                <h4 class="post-prediction">{{ post.prediction }}</h4>
+                <img class="post-image w-100" src="{{ post.image.url }}">
+              </div>
+            </div>
+          {% empty %}
+            <div class="col-12">
+              <p>There are no posts :(</p>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="text-end">
+          <a href="{% url 'post_create' %}" class="btn btn-primary">Add Post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %}

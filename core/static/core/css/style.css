@@ -1,0 +1,63 @@
+body {
+  padding-top: 4rem;
+}
+
+.navbar.fixed-top {
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1rem;
+}
+
+.main {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.main-header-wrapper {
+  text-align: left;
+}
+
+.main-header {
+  color: black;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
+
+  .main-header-wrapper {
+    text-align: center;
+  }
+
+  .main-header {
+    font-size: 3rem;
+  }
+}
+
+.main-header:hover {
+  color: black;
+}
+
+.nav-item {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.copyright {
+  font-size: 0.75rem;
+}
+
+.post-image {
+  width: 100%;
+  height: 18rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 48px rgba(0, 0, 0, 0.05), 0 2px 16px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}

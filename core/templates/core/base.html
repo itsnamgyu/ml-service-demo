@@ -49,12 +49,13 @@
 
 </head>
 <body>
-<nav class="navbar navbar-mobile fixed-top bg-white navbar-expand-lg navbar-light px-3 py-3">
-  <a class="navbar-brand" href="https://github.com/itsnamgyu/ml-service-demo">
-    <div class="d-flex align-items-center">
-      <i class="fab fa-github me-2"></i>
-      <p class="fw-bold m-0">ML Service Demo</p>
-    </div>
+<nav class="navbar navbar-mobile fixed-top bg-white navbar-expand-lg navbar-light px-3 py-3 border-bottom">
+  <a class="navbar-brand" href="{% url 'home' %}">
+      <p class="fw-bold m-0">ML Service Demo (Django)</p>
+  </a>
+  <a class="navbar-brand ms-auto d-flex align-items-center" href="https://github.com/itsnamgyu/ml-service-demo">
+    <i class="fab fa-github me-2"></i>
+    <div class="m-0">View on GitHub</div>
   </a>
 </nav>
 
@@ -69,7 +70,6 @@
 <div class="py-5"></div>
 
 <div class="text-center">
-  <div class="copyright-top"></div>
   <p class="copyright">Copyright 2022 © Namgyu Ho. All Rights Reserved. </p>
 </div>
 </body>

@@ -32,10 +32,28 @@ chmod 774 Anaconda3-2022.05-Linux-x86_64.sh
 pip install -r requirements.txt  # 사용되는 패키지는 해당 txt 파일 참고! 
 ```
 
+### 5. npm 설치 (NodeJS)
+
+React 개발 환경을 준비하려면 npm이 필요하며, 이는 NodeJS에 포함되어 있습니다.
+*백엔드 서버를 NodeJS로 만들려는 것은 아닙니다.
+
+https://nodejs.org/ko/download/
+
 # Getting Started
 
 1. 먼저 학습된 ML 모델 파일 (`model.pt`)를 최상단 폴더에 복사해주세요.
-2. 아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.
+2. 아래 명령어를 사용해서 React 번들을 컴파일할 수 있습니다. 컴파일 결과는 `app/build/`에서 확인하실 수 있습니다.
+
+```bash
+cd app
+npm install
+npm run build
+```
+
+- 만약에 서버를 로컬 환경이 아닌 타 머신에서 호스팅하고자 한다면 `app/package/json` 내의 `proxy` 대상 값을 서버 호스트로 변경해주세요. 
+예: `"proxy": "http://ml.namgyu.io"`. 변경 후에는 다시 `npm run build`를 실행해야 번들 파일에 적용됩니다.
+
+3. 아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.
 
 ```bash
 python manage.py migrate
@@ -45,6 +63,11 @@ python manage.py runserver 0.0.0.0:8000
 명령어를 실행한 개발용 머신에서 접속하는 경우 주소창에 `localhost:8000`, 다른 서버 머신에서 명령어를 실행한 경우, `<서버 ip 주소 혹은 도메인>:8000`로 접속 가능합니다.
 
 본 명령어는 개발 및 테스트용으로, production (상용) 환경에서 배포할 때에는 웹 서버 전용 소프트웨어 프로그램 (e.g., Apache, WSGI) 혹은 클라우드 서비스를 사용합니다.
+
+## 접속하기
+
+- Django HTML 렌더링을 사용한 페이지는 `/`로 접속하여 확인할 수 있습니다 (예: `localhost:8000/`, `ml.namgyu.io:8000`).
+- Django를 백엔드로 활용한 React 프론트엔드 기반 페이지는 `/app/`로 접속하여 확인할 수 있습니다 (예: `localhost:8000/app/`, `ml.namgyu.io:8000/app/`).
  
  ----
 # Docker

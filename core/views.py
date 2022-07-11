@@ -54,3 +54,44 @@ class PostCreateView(TemplateView):
 
         return HttpResponseRedirect(self.success_url)
 
+
+class AppView(TemplateView):
+    template_name = "index.html"  # app/build/index.html
+
+
+class PostListApiView(View):
+    def get(self, request, *args, **kwargs):
+        posts = Post.objects.all()
+        posts = map(lambda post: {
+            "id": post.id,
+            "prediction": post.prediction,
+            "image_url": post.image.url,
+        }, posts)
+        posts = list(posts)
+        return JsonResponse(posts, safe=False)
+
+    def post(self, request, *args, **kwargs):
+        return HttpResponseNotFound()
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class PostCreateApiView(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponseNotFound()
+
+    def post(self, request, *args, **kwargs):
+        image = request.FILES.get("image")
+        if image is None:
+            return HttpResponseBadRequest()
+
+        self.object = Post(image=image)
+        prediction_index = predict(self.object.image)  # run ml model
+
+        post = Post(image=image)
+        if prediction_index == 0:
+            post.prediction = Post.CAT
+        else:
+            post.prediction = Post.DOG
+        post.save()
+
+        return JsonResponse({"success": True})

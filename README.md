@@ -34,7 +34,7 @@ pip install -r requirements.txt  # 사용되는 패키지는 해당 txt 파일 �
 
 ### 5. npm 설치 (NodeJS)
 
-React 개발 환경을 준비하려면 npm이 필요하며, 이는 NodeJS에 포함되어 있습니다.
+React 개발 환경을 준비하려면 npm이 필요하며, 이는 NodeJS를 설치할 때 함께 따라옵니다.
 *백엔드 서버를 NodeJS로 만들려는 것은 아닙니다.
 
 https://nodejs.org/ko/download/

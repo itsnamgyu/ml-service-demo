@@ -75,7 +75,7 @@ python manage.py runserver 0.0.0.0:8000
 - `core/`: Django 앱 폴더 (서비스 백엔드 및 Django 기반 프론트엔드 코드)
 - `ml/`: 머신러닝 모델 코드
 - `mldemo/`: Django 프로젝트 폴더 (Django 설정)
-- `train_model.ipynb/`: 머신러닝 모델 학스 코드
+- `train_model.ipynb/`: 머신러닝 모델 학습 코드
 
 
  ----

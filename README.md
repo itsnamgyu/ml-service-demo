@@ -50,7 +50,7 @@ npm install
 npm run build
 ```
 
-- 만약에 서버를 로컬 환경이 아닌 타 머신에서 호스팅하고자 한다면 `app/package/json` 내의 `proxy` 대상 값을 서버 호스트로 변경해주세요. 
+- 만약에 서버를 로컬 환경이 아닌 타 머신에서 호스팅하고자 한다면 `app/package.json` 내의 `proxy` 대상 값을 서버 호스트로 변경해주세요. 
 예: `"proxy": "http://ml.namgyu.io"`. 변경 후에는 다시 `npm run build`를 실행해야 번들 파일에 적용됩니다.
 
 3. 아래 명령어를 실행하시면 로컬 및 외부에서 접근할 수 있는 Django 웹 서버가 8000번 포트에서 서빙됩니다.

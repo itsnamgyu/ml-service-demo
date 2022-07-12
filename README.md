@@ -69,6 +69,15 @@ python manage.py runserver 0.0.0.0:8000
 - Django HTML 렌더링을 사용한 페이지는 `/`로 접속하여 확인할 수 있습니다 (예: `localhost:8000/`, `ml.namgyu.io:8000`).
 - Django를 백엔드로 활용한 React 프론트엔드 기반 페이지는 `/app/`로 접속하여 확인할 수 있습니다 (예: `localhost:8000/app/`, `ml.namgyu.io:8000/app/`).
  
+# Index
+
+- `app/`: React 폴더 (React 기반 프론트엔드 코드)
+- `core/`: Django 앱 폴더 (서비스 백엔드 및 Django 기반 프론트엔드 코드)
+- `ml/`: 머신러닝 모델 코드
+- `mldemo/`: Django 프로젝트 폴더 (Django 설정)
+- `train_model.ipynb/`: 머신러닝 모델 학스 코드
+
+
  ----
 # Docker
 위의 파일을 Docker 상에서 실행할 수 있도록 하는 과정입니다.
